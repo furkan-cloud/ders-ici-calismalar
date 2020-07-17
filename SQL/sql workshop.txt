@@ -1,0 +1,68 @@
+SELECT Title FROM albums WHERE AlbumId = '3';
+SELECT * FROM artists ORDER BY name;
+-- SELECT * FROM artists WHERE name = 'Metallica';
+--SELECT * FROM artists WHERE name LIKE '%etallica';
+--SELECT * FROM albums WHERE AlbumId = 3;
+--SELECT * FROM albums WHERE ArtistId = 50;
+-- SELECT * FROM tracks WHERE AlbumId = 152;
+--SELECT * FROM tracks WHERE AlbumId IN (35, 148, 149) Order BY AlbumId;
+--SELECT max(Bytes), name FROM tracks where AlbumId = 152;
+--SELECT max(Bytes),min(Bytes), name FROM tracks where AlbumId = 152;
+--SELECT min(Bytes), name, AlbumId from tracks Group by AlbumId;
+--SELECT COUNT(*), AlbumId from tracks Group by AlbumId ORDER BY COUNT(*) DESC;
+--SELECT * FROM tracks WHERE albumId = 141;
+--SELECT SUM(Unitprice), AVG(UnitPrice) FROM tracks;
+--SELECT max(Bytes),min(Bytes), name FROM tracks where AlbumId = 152;
+--SELECT Bytes, name FROM tracks where AlbumId = 152;
+--SELECT max(Bytes),min(Bytes), name FROM tracks where AlbumId = 152;
+SELECT * FROM albums WHERE ArtistId = 50;
+SELECT * FROM tracks WHERE AlbumId = 35;
+select title,name  from albums join artists on "albums"."ArtistId" = "artists"."ArtistId" where "artists"."ArtistId"=50;
+select albums.Title, tracks.name from albums
+join artists on "albums"."ArtistId" = "artists"."ArtistId" 
+join tracks on tracks."AlbumId" = "albums"."AlbumId"
+where "artists"."ArtistId"=50;
+select "artists".name, albums.Title , tracks.Name from albums
+join artists on "albums"."ArtistId" = "artists"."ArtistId"
+join "tracks" on "tracks"."AlbumId" = "albums"."AlbumId"
+where "artists"."ArtistId"=50;
+SELECT AlbumId FROM albums
+JOIN artists ON albums.ArtistId = artists.ArtistId where artists.Name = 'Metallica';
+select "Name" from "tracks" where "AlbumId" in
+( select "AlbumId" from albums
+JOIN artists on albums.ArtistId = artists.ArtistId where artists.Name='Metallica');
+select "Name" from "tracks" where "AlbumId" in
+( select "AlbumId" from albums
+JOIN artists on albums.ArtistId = artists.ArtistId where artists.Name='Metallica');
+
+
+
+
+select count(*),"invoices"."BillingCountry" from "invoice_items"
+join "invoices" on "invoices"."InvoiceId" = "invoice_items"."InvoiceId"
+where invoice_items."TrackId" in
+(select "TrackId" from "tracks" where "AlbumId" in
+( select "AlbumId" from albums
+JOIN artists on albums.ArtistId = artists.ArtistId where artists.Name='Metallica'))
+GROUP by "invoices"."BillingCountry"
+
+
+
+
+SELECT tracks.Name as Trak_Ad, artists.Name as Artist_Ad, albums.Title as Album
+from tracks, albums, artists
+where artists.ArtistId=albums.ArtistId
+and albums.AlbumId=tracks.AlbumId
+and artists.Name='Metallica';
+
+
+SELECT max(Bytes),min(Bytes) FROM tracks where AlbumId = 152;
+
+
+
+
+select * from
+(select min(bytes),"AlbumId" as x ,tracks.name  from tracks GROUP by AlbumId ) as min_tablosu
+join
+( select max(bytes),"AlbumId" as y ,tracks.name  from tracks GROUP by AlbumId) as max_tablosu
+on min_tablosu.x = max_tablosu.y
