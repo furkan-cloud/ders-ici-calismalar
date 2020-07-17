@@ -1,0 +1,49 @@
+1. open the terminal (Git Bash/VS Code or whatever)
+2. To know which directory you are in, you can use the "pwd" command.
+3. Go to desktop
+4. Create a directory named "clarusway"
+5. List all the files with details
+6. Create a file named test.txt
+7. Write "hello" to test.txt
+8. Add "My name is Sergio" to test.txt
+9. Print the content of test.txt
+10. Create a file named test1.txt and write "hello, this is second text file" while creating.
+11. Print the content of test1.txt
+12. Display the contents of the file test.txt and test1.txt at the same time.
+13. Create text files with the name multiple1.txt through multiple100.txt in current directory.
+14. Go to upper directory
+15. Create a directory named "europe"
+16. Create two files named lab.txt and lab1.txt at the same time
+17. Write "This is the second directories first file" in lab.txt
+18. Print the content of lab.txt
+19. Make a copy of lab.txt in the current directory as newlab.txt
+20. List all the files in current directory.
+20. Print the content of newlab.txt
+21. List any file in current directory with the extension of ".txt"
+22. List any file which begins with "n" and ends with".txt"
+    List any file begins with lab and we dont know the end of it
+23. Copy newlab.txt to the clarusway directory.
+24. Copy the files beginnig with "m*{20..30}" and ending with ".txt from clarusway directory to europe directory.
+25. Move the files beginnig with "m*{40..50}" and ending with ".txt from clarusway directory to europe directory.
+26. List all the files on Clarusway directory
+27. Rename the newlab.txt file as linuxlab.txt
+28. List the files with details on clarusway directory and see the renamed linuxlab.txt file
+29. Print the permission details of linuxlab.txt
+30. Change file permissions of the linuxlab.txt as everybody can read, write and execute.
+31. Change execute permissions of everybody to no execute permission on linuxlab.txt
+32. Change the file permissions one level up on linuxlab.txt
+33. Delete the linuxlab.txt file
+34. Create "america" directory
+35. Delete america directory
+36. Delete clarusway directory
+37. Go to the europe directory
+38. List the contents of europe directory
+39. Create a hidden linuxworkshop.txt file
+40. Use ls command to list the contents of the europe directory
+41. Make the linuxworkshop.txt visible
+42. Use vim or vi or nano editor to manipulate the linuxworkshop.txt file
+43. Exit from the terminal
+* Tips and Tricks for Using Linux Command Line
+- You can use the clear command to clear the terminal if it gets filled up with too many commands.
+- TAB can be used to fill up in terminal. For example, You just need to type "cd Doc" and then TAB and the terminal fills the rest up and makes it "cd Documents".
+- Ctrl+C can be used to stop any command in terminal safely. If it doesn't stop with that, then Ctrl+Z can be used to force stop it. (edited) 
